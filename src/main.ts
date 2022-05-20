@@ -14,7 +14,7 @@ async function run(): Promise<void> {
     const token = getInput(TOKEN_NAME)
     const octokit = github.getOctokit(token)
 
-    octokit.rest.pulls.createReviewComment({
+    await octokit.rest.pulls.createReviewComment({
       owner: context.repo.owner,
       repo: context.repo.repo,
       pull_number: context.payload.pull_request.number,
