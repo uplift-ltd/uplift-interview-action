@@ -1,0 +1,46 @@
+{
+  "name": "uplift-interview-action",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Uplift Interview PR Action",
+  "main": "lib/main.js",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write '**/*.ts'",
+    "format-check": "prettier --check '**/*.ts'",
+    "lint": "eslint src/**/*.ts",
+    "package": "ncc build --source-map --license licenses.txt",
+    "test": "jest --passWithNoTests",
+    "all": "run-s build format lint package test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uplift-interview/uplift-interview-action.git"
+  },
+  "keywords": [
+    "actions",
+    "node",
+    "setup"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^16.10.5",
+    "@typescript-eslint/parser": "^5.8.1",
+    "@vercel/ncc": "^0.31.1",
+    "eslint": "^7.32.0",
+    "eslint-plugin-github": "^4.3.2",
+    "eslint-plugin-jest": "^25.3.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.2.5",
+    "js-yaml": "^4.1.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "2.5.1",
+    "ts-jest": "^27.1.2",
+    "typescript": "^4.4.4"
+  }
+}

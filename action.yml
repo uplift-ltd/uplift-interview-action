@@ -1,0 +1,6 @@
+name: "Uplift Interview"
+description: "PR Bot that posts a comment prompting the user to submit their PR for review."
+author: "Uplift Agency Ltd"
+runs:
+  using: "node16"
+  main: "dist/index.js"
