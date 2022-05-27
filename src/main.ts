@@ -1,5 +1,5 @@
 import {getInput, setFailed} from '@actions/core'
-import github from '@actions/github'
+import * as github from '@actions/github'
 
 const TOKEN_NAME = 'GITHUB_TOKEN'
 
