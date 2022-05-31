@@ -2,8 +2,6 @@
 
 Posts a comment to encourage the User to let us know when the PR is ready for review.
 
-TESWT TEST TEST
-
 ## Validate
 
 You can now validate the action by referencing `./` in a workflow in your repo (see [test.yml](.github/workflows/test.yml))
