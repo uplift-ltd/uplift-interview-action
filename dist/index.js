@@ -41,7 +41,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core_1 = __nccwpck_require__(2186);
 const github = __importStar(__nccwpck_require__(5438));
-const TOKEN_NAME = 'GITHUB_TOKEN';
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -55,7 +54,7 @@ function run() {
                 return;
             if (context.eventName !== 'opened')
                 return;
-            const token = (0, core_1.getInput)(TOKEN_NAME);
+            const token = (0, core_1.getInput)('token', { required: true });
             const octokit = github.getOctokit(token);
             yield octokit.rest.pulls.createReviewComment({
                 owner: context.repo.owner,
@@ -67,6 +66,8 @@ function run() {
         catch (error) {
             if (error instanceof Error)
                 (0, core_1.setFailed)(error.message);
+            // eslint-disable-next-line no-console
+            console.error(error);
         }
     });
 }
