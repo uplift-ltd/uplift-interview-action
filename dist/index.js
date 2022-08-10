@@ -45,7 +45,11 @@ const TOKEN_NAME = 'GITHUB_TOKEN';
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
+            // eslint-disable-next-line no-console
+            console.log('RUNNING OUR ACTION?');
             const context = github.context;
+            // eslint-disable-next-line no-console
+            console.log('CONTEXT', context);
             // only works for PRs
             if (!context.payload.pull_request)
                 return;
